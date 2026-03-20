@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Elevator.Workers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+402e7e8046aefc23a2c669b9f63022414758e9a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b88c4ae717f8b0e03cd3a0f9ad092f37361696e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Elevator.Workers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Elevator.Workers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,16 +1,14 @@
-using Elevator.Domain.Enums;
-
 namespace Elevator.Application.Contracts.Dtos;
 
-/// <summary>
-/// Read-only projection of a HallRequest.
-/// </summary>
 public record HallRequestDto(
     Guid Id,
-    int Floor,
-    Direction Direction,
-    RequestStatus Status,
+    int OriginFloor,
+    int DestinationFloor,
+    string Direction,
+    string Status,
+    string AccessLevel,
+    bool IsVip,
     Guid? AssignedElevatorId,
-    DateTimeOffset CreatedAt
+    DateTime CreatedAtUtc
 );
 

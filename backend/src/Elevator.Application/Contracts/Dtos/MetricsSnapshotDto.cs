@@ -1,14 +1,11 @@
 namespace Elevator.Application.Contracts.Dtos;
 
-/// <summary>
-/// Read-only metrics snapshot DTO sent to the Angular dashboard.
-/// </summary>
 public record MetricsSnapshotDto(
     int TotalRequests,
     int CompletedRequests,
-    int PendingRequests,
+    int RejectedRequests,
+    double AverageWaitTimeSeconds,
     int ActiveElevators,
-    double AverageWaitSeconds,
-    DateTimeOffset CapturedAt
+    int PendingRequests
 );
 

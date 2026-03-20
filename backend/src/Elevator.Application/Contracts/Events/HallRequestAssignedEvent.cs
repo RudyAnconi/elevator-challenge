@@ -1,12 +1,11 @@
 namespace Elevator.Application.Contracts.Events;
 
-/// <summary>
-/// Published when the dispatch algorithm assigns an elevator to a hall request.
-/// </summary>
 public record HallRequestAssignedEvent(
-    Guid HallRequestId,
+    Guid RequestId,
     Guid ElevatorId,
-    int Floor,
-    DateTimeOffset OccurredAt
+    int OriginFloor,
+    int DestinationFloor,
+    bool IsVip,
+    DateTime OccurredAtUtc
 );
 

@@ -1,12 +1,9 @@
-using Elevator.Domain.ValueObjects;
+using Elevator.Application.Contracts.Dtos;
 
 namespace Elevator.Application.Contracts.Events;
 
-/// <summary>
-/// Published on each metrics tick so the Angular dashboard can refresh stats.
-/// </summary>
 public record MetricsUpdatedEvent(
-    MetricsSnapshot Snapshot,
-    DateTimeOffset OccurredAt
+    MetricsSnapshotDto Metrics,
+    DateTime OccurredAtUtc
 );
 
