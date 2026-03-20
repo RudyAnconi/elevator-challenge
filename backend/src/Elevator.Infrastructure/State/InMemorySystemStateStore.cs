@@ -1,23 +1,32 @@
-using System.Collections.Concurrent;
 using Elevator.Application.Contracts.Interfaces;
 using Elevator.Domain.Entities;
+using Elevator.Domain.Enums;
 
 namespace Elevator.Infrastructure.State;
 
 /// <summary>
-/// Thread-safe in-memory store for all simulation state.
+/// In-memory store for all simulation state.
 /// Replaces any database for this in-memory scenario.
 /// TODO: Add locking strategy or concurrent collections for high-frequency writes.
 /// </summary>
 public sealed class InMemorySystemStateStore : ISystemStateStore
 {
+    private const int DefaultElevatorCount = 5;
+    private const int DefaultMinFloor = 0;
+    private const int DefaultMaxFloor = 20;
+
     private readonly List<ElevatorCar> _elevators = [];
     private readonly List<HallRequest> _hallRequests = [];
-    private readonly ConcurrentDictionary<Guid, PanelSession> _sessions = new();
+    private readonly List<PanelSession> _panelSessions = [];
+    private readonly List<SystemEvent> _systemEvents = [];
+
+    public int MinSupportedFloor => DefaultMinFloor;
+    public int MaxSupportedFloor => DefaultMaxFloor;
 
     public IReadOnlyList<ElevatorCar> Elevators => _elevators.AsReadOnly();
     public IReadOnlyList<HallRequest> HallRequests => _hallRequests.AsReadOnly();
-    public IReadOnlyList<PanelSession> PanelSessions => _sessions.Values.ToList().AsReadOnly();
+    public IReadOnlyList<PanelSession> PanelSessions => _panelSessions.AsReadOnly();
+    public IReadOnlyList<SystemEvent> SystemEvents => _systemEvents.AsReadOnly();
 
     public ElevatorCar? GetElevator(Guid id) =>
         _elevators.FirstOrDefault(e => e.Id == id);
@@ -38,19 +47,40 @@ public sealed class InMemorySystemStateStore : ISystemStateStore
     }
 
     public void AddPanelSession(PanelSession session) =>
-        _sessions[session.Id] = session;
+        _panelSessions.Add(session);
 
     public void RemovePanelSession(Guid sessionId) =>
-        _sessions.TryRemove(sessionId, out _);
+        _panelSessions.RemoveAll(session => session.Id == sessionId);
+
+    public void AddSystemEvent(SystemEvent systemEvent) =>
+        _systemEvents.Add(systemEvent);
 
     public void Initialize(int elevatorCount = 5, int floorCount = 20)
     {
+        _ = elevatorCount;
+        _ = floorCount;
+
         _elevators.Clear();
         _hallRequests.Clear();
-        _sessions.Clear();
+        _panelSessions.Clear();
+        _systemEvents.Clear();
 
-        for (var i = 0; i < elevatorCount; i++)
-            _elevators.Add(ElevatorCar.CreateNew()); // all start at floor 0
+        for (var i = 0; i < DefaultElevatorCount; i++)
+        {
+            _elevators.Add(new ElevatorCar
+            {
+                CurrentFloor = DefaultMinFloor,
+                Direction = Direction.None,
+                State = ElevatorState.Idle,
+                UpQueue = [],
+                DownQueue = [],
+                PriorityQueue = [],
+                CurrentPassengers = 0,
+                IsInMaintenance = false,
+                IsEmergencyStopped = false,
+                NextDestinationFloor = null
+            });
+        }
     }
 }
 

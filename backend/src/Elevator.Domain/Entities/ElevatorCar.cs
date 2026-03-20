@@ -2,20 +2,18 @@ using Elevator.Domain.Enums;
 
 namespace Elevator.Domain.Entities;
 
-/// <summary>
-/// Represents a physical elevator car in the simulation.
-/// 5 instances will be seeded at startup, all starting at floor 0.
-/// </summary>
 public class ElevatorCar
 {
     public Guid Id { get; init; } = Guid.NewGuid();
     public int CurrentFloor { get; set; } = 0;
-    public ElevatorState State { get; set; } = ElevatorState.Idle;
     public Direction Direction { get; set; } = Direction.None;
-    public int? TargetFloor { get; set; }
-
-    // TODO: Add floor queue, load sensor, door state, speed
-
-    public static ElevatorCar CreateNew() => new();
+    public ElevatorState State { get; set; } = ElevatorState.Idle;
+    public List<int> UpQueue { get; set; } = [];
+    public List<int> DownQueue { get; set; } = [];
+    public List<int> PriorityQueue { get; set; } = [];
+    public int CurrentPassengers { get; set; } = 0;
+    public bool IsInMaintenance { get; set; } = false;
+    public bool IsEmergencyStopped { get; set; } = false;
+    public int? NextDestinationFloor { get; set; }
 }
 

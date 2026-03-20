@@ -1,15 +1,12 @@
 namespace Elevator.Domain.ValueObjects;
 
-/// <summary>
-/// Immutable snapshot of system-wide performance metrics at a point in time.
-/// </summary>
-public record MetricsSnapshot(
-    int TotalRequests,
-    int CompletedRequests,
-    int PendingRequests,
-    int ActiveElevators,
-    double AverageWaitSeconds,
-    DateTimeOffset CapturedAt
-    // TODO: Add per-elevator stats, peak hours, floor heatmap
-);
+public class MetricsSnapshot
+{
+    public int TotalRequests { get; set; }
+    public int CompletedRequests { get; set; }
+    public int RejectedRequests { get; set; }
+    public double AverageWaitTimeSeconds { get; set; }
+    public int ActiveElevators { get; set; }
+    public int PendingRequests { get; set; }
+}
 

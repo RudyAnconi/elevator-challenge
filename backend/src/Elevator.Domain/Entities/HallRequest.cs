@@ -2,18 +2,16 @@ using Elevator.Domain.Enums;
 
 namespace Elevator.Domain.Entities;
 
-/// <summary>
-/// Represents a call from a floor hallway panel (up/down button press).
-/// </summary>
 public class HallRequest
 {
     public Guid Id { get; init; } = Guid.NewGuid();
-    public int Floor { get; init; }
-    public Direction Direction { get; init; }
+    public int OriginFloor { get; set; }
+    public int DestinationFloor { get; set; }
+    public Direction Direction { get; set; } = Direction.None;
     public RequestStatus Status { get; set; } = RequestStatus.Pending;
+    public AccessLevel AccessLevel { get; set; } = AccessLevel.None;
+    public bool IsVip { get; set; } = false;
+    public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     public Guid? AssignedElevatorId { get; set; }
-    public DateTimeOffset CreatedAt { get; init; } = DateTimeOffset.UtcNow;
-
-    // TODO: Add retry count, priority, passenger weight estimate
 }
 

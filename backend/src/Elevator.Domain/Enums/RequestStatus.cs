@@ -6,7 +6,8 @@ public enum RequestStatus
     Assigned,
     InProgress,
     Completed,
-    Cancelled,
-    Rejected
+    Rejected,
+    TimedOut,
+    NoShow
 }
 
