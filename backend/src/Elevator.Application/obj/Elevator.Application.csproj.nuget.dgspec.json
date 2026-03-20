@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/Elevator.Application.csproj": {}
+  },
+  "projects": {
+    "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/Elevator.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/Elevator.Application.csproj",
+        "projectName": "Elevator.Application",
+        "projectPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/Elevator.Application.csproj",
+        "packagesPath": "/home/rudy/.nuget/packages/",
+        "outputPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rudy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net10.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net10.0": {
+            "targetAlias": "net10.0",
+            "projectReferences": {
+              "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Domain/Elevator.Domain.csproj": {
+                "projectPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Domain/Elevator.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net10.0": {
+          "targetAlias": "net10.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/rudy/.dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Domain/Elevator.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Domain/Elevator.Domain.csproj",
+        "projectName": "Elevator.Domain",
+        "projectPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Domain/Elevator.Domain.csproj",
+        "packagesPath": "/home/rudy/.nuget/packages/",
+        "outputPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rudy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net10.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net10.0": {
+            "targetAlias": "net10.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net10.0": {
+          "targetAlias": "net10.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/rudy/.dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

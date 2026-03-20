@@ -1,0 +1,116 @@
+{
+  "version": 3,
+  "targets": {
+    "net10.0": {
+      "Elevator.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Elevator.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Elevator.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Elevator.Application.dll": {}
+        }
+      },
+      "Elevator.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Elevator.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Elevator.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Elevator.Application/1.0.0": {
+      "type": "project",
+      "path": "../Elevator.Application/Elevator.Application.csproj",
+      "msbuildProject": "../Elevator.Application/Elevator.Application.csproj"
+    },
+    "Elevator.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Elevator.Domain/Elevator.Domain.csproj",
+      "msbuildProject": "../Elevator.Domain/Elevator.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net10.0": [
+      "Elevator.Application >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/rudy/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Presentation/Elevator.Presentation.csproj",
+      "projectName": "Elevator.Presentation",
+      "projectPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Presentation/Elevator.Presentation.csproj",
+      "packagesPath": "/home/rudy/.nuget/packages/",
+      "outputPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Presentation/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/rudy/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net10.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net10.0": {
+          "targetAlias": "net10.0",
+          "projectReferences": {
+            "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/Elevator.Application.csproj": {
+              "projectPath": "/home/rudy/RiderProjects/Elevator/backend/src/Elevator.Application/Elevator.Application.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net10.0": {
+        "targetAlias": "net10.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/home/rudy/.dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

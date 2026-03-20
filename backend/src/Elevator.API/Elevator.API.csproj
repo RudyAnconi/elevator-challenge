@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Elevator</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Elevator.Application\Elevator.Application.csproj" />
+      <ProjectReference Include="..\Elevator.Infrastructure\Elevator.Infrastructure.csproj" />
+      <ProjectReference Include="..\Elevator.Presentation\Elevator.Presentation.csproj" />
+      <ProjectReference Include="..\Elevator.Workers\Elevator.Workers.csproj" />
+    </ItemGroup>
+
+</Project>
